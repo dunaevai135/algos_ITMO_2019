@@ -15,25 +15,27 @@ int main () {
 	fi.open ("input.txt");
 	fo.open ("output.txt");
 	fi >> n;
-	for (size_t i = 0; i < n; ++i)
-	{
+	for (size_t i = 0; i < n; ++i) {
 		fi >> tmp;
 		v.push_back(tmp);
 	}
 
-	for (size_t i = 0; i < n; ++i)
-	{
-		auto lo = lower_bound(v.begin(), v.begin()+i, v[i]);
-		long pos = lo - v.begin();
-		v.insert(lo, v[i]);
-		v.erase(v.begin() + i + 1);
-		fo << pos + 1<< " ";// TODO magic const
+	fo << 1 << " ";
+
+	for (size_t i = 1; i < n; ++i) {
+		int key = v[i];
+		int j = i-1;
+		while (j >= 0 and v[j] > key) {
+			v[j+1] = v[j];
+			j--;
+		}
+		v[j+1] = key;
+		fo << j + 2<< " ";// TODO magic consts
 	}
 
 	fo << "\n";
 
-	for (size_t i = 0; i < n; ++i)
-	{
+	for (size_t i = 0; i < n; ++i) {
 		fo << v[i] << " ";
 	}
 
