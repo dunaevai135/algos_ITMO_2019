@@ -1,0 +1,10 @@
+3 3 1
+bab
+bba
+baa
+
+
+3 3 1
+0 bab
+1 bba
+2 baa
