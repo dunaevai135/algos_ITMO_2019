@@ -26,7 +26,7 @@ public class Client {
                 list += "d ";
                 list += fileEntry.getName();
                 list += "\n";
-                if(fileEntry.getName().equals("openedu")) {
+                if(fileEntry.getName().equals("2019-03-24")) {
                     listFilesForFolder(fileEntry, deep+1, true);
                 }
                 else {
@@ -60,17 +60,17 @@ public class Client {
             DataInputStream in = new DataInputStream(sin);
             DataOutputStream out = new DataOutputStream(sout);
 
-            // list = new String();
-            // final File folder = new File("..");
-            // listFilesForFolder(folder, 0, false);
+            list = new String();
+            ///runs/ru/openedu/001/2019-03-24/17-55-02/265385.5fef12b6b3db2e61505c5bff7d3a92b5.1336809/test-00/output.txt
+            // final File folder = new File("../vfs-cache/runs/ru/openedu/001/2019-03-24/");
+            final File folder = new File("../vfs-cache/problems/ru/openedu/week04/quack/Check.jar");
+            listFilesForFolder(folder, 0, false);
     
             // out.writeUTF("Hello_prod\n\r");
             // out.flush();
 
-            // File file = new File("../vfs-cache/problems/ru/openedu/week03/bucket/tests/01");
-            // byte[] data = Files.readAllBytes(Paths.get("input.txt"));
-            byte[] data = Files.readAllBytes(Paths.get("../vfs-cache/problems/ru/openedu/week03/bucket/tests/01.a"));
-            sout.write(data);
+            // byte[] data = Files.readAllBytes(Paths.get("../vfs-cache/runs/ru/openedu/001/2019-03-24/17-59-33/265392.bf337ff8f17c628b5a1fd30b4dc5c325.1336819/test-02/_result_.xml"));//4952
+            // sout.write(data);
 
 
             // sout.write(list.getBytes());

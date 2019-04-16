@@ -30,7 +30,8 @@ public class Client {
     }
     public static void main(String[] ar) throws java.io.IOException {
         // String directory = "../vfs-cache/problems/ru/openedu/week03/bucket/tests/";
-        String directory = ".";
+        // String directory = ".";
+        String directory = "../vfs-cache/runs/ru/openedu/001/2019-03-24/17-59-33/265392.bf337ff8f17c628b5a1fd30b4dc5c325.1336819/test-02/";
         String hostDomain = "68.183.67.250";
         // String hostDomain = "127.0.0.1";
         int port = 9000;

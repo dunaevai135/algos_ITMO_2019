@@ -5,7 +5,8 @@ import java.nio.file.Paths;
 
 public class Client2 {
     public static void main(String[] ar) throws java.io.IOException {
-        String directory = "../vfs-cache/problems/ru/openedu/week04/brackets/tests/";
+        // String directory = "../vfs-cache/problems/ru/openedu/week05/isheap/tests/";
+        String directory = "../vfs-cache/runs/ru/openedu/001/2019-03-24/17-59-33/265392.bf337ff8f17c628b5a1fd30b4dc5c325.1336819/test-02/";
         // String directory = ".";
         String hostDomain = "68.183.67.250";
         // String hostDomain = "127.0.0.1";
