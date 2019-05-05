@@ -1,0 +1,18 @@
+import re
+
+fo= open("output.txt","w")
+fi = open('input.txt', 'r')
+
+s = fi.readline().strip()
+s=s.replace(" ", "")
+ans = 0
+l = 0
+while l < len(s)-1:
+	for r, sr in enumerate(s[l+1:]):
+		if s[l] == sr:
+			ans+=r
+	l+=1
+
+
+
+fo.write(str(ans) + '\n')

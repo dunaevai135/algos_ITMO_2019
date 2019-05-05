@@ -1,7 +1,7 @@
 from edx_io import edx_io
-import heapq
 
 def heappush(heap, item):
+    """Push item onto heap, maintaining the heap invariant."""
     heap.append(item)
     siftdown(heap, 0, len(heap)-1)
 
@@ -42,7 +42,7 @@ def siftdown(heap, startpos, pos):
     while pos > startpos:
         parentpos = (pos - 1) >> 1
         parent = heap[parentpos]
-        if parent < newitem:
+        if newitem < parent:
             heap[pos] = parent
             pos = parentpos
             continue
@@ -53,35 +53,31 @@ def main(io):
     heap = []
     # fo = open("output.txt","w")
     # fi = open('input.txt', 'r')
-    n = int(fi.readline())
+    n = io.next_int()
     arr = [0]*(10**6)
     for i in range(0, n):
-        inp = fi.readline()
-        if inp[0] == 'A':
-            p = int(inp[2:])
-            heapq.heappush(heap, p)
+        # inp = fi.readline()
+        inp = io.next_token()
+        if inp == b'A':
+            p = io.next_int()
+            heappush(heap, p)
             arr[i] = p
-        elif inp[0] == 'X':
+        elif inp == b'X':
             if len(heap)==0:
-                fo.write("*\n")
+                io.writeln("*")
                 continue
-            pop = heapq.heappop(heap)
-            fo.write(str(pop))
-            fo.write("\n")
-            # TODO
-        elif inp[0] == 'D':
-            p = inp[1:].split()
-            oldNum = arr[int(p[0])-1]
-            newNum = int(p[1])
-            arr[int(p[0])-1] = newNum
-            # print(oldNum)
-            # print(newNum)
-            # print(heap)
+            pop = heappop(heap)
+            io.writeln(str(pop))
+        elif inp == b'D':
+            p = io.next_int()
+            oldNum = arr[p-1]
+            newNum = io.next_int()
+            arr[p-1] = newNum
             ind = heap.index(oldNum)
             heap[ind] = newNum
             # heapq._siftdown(heap, 0, ind)
             # heapq._siftup(heap, ind)
-            heapq._siftdown(heap, 0, ind)
+            siftdown(heap, 0, ind)
         else:
             print(inp)
 

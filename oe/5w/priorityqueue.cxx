@@ -1,44 +1,62 @@
-#include "edx-io.hpp"
+// #include "edx-io.hpp"
+#include <vector>
+#include <algorithm>
 using namespace std;
+
+// #define cout io
+// #define cin io
+
+void heappush(vector<int> heap, int item){
+    heap.push_back(item);
+    siftdown(heap, 0, len(heap)-1)
+}
+
+int heappop(vector<int> heap){
+    lastelt = heap.pop()    # raises appropriate IndexError if heap is empty
+    if heap:
+        returnitem = heap[0]
+        heap[0] = lastelt
+        siftup(heap, 0)
+        return returnitem
+    return lastelt
+}
 
 int main() {
 	int N;
-	io >> N;
+	cin >> N;
 	
-	int* heap = new int[N];
-	int head = 0;
-	int tail = -1;
+	vector<int> heap;
+	v.reserve(1000000);
 	int* array = new int[N];
 	char action;
 	int a, temp;
 
 	for (int i = 0; i < N; i++) {
-		io >> action;
+		cin >> action;
 		switch (action)
 		{
 		case 'A':
-			io >> a;
-			heap[++tail] = a;
+			cin >> a;
+			heappush(heap, a)
 			array[i] = a;
-			siftdown(heap, tail, 0, tail-1);
 			break;
 		case 'X':
 			if (head > tail) {
-				io << '*' << '\n';
+				cout << '*' << '\n';
 			}
 			else {
-				array[Queue[head].input_time] = tail;
-				array[Queue[tail].input_time] = head;
-				swop(&Queue[head], &Queue[tail]);
-				io << Queue[tail--].value << '\n';
-				heapifyDown(Queue, tail, array);
+				pop = heappop(heap);
+				cout << pop << '\n';
 			}
 			break;
 		case 'D':
-			io >> a;
-			io >> temp;
-			Queue[array[a - 1]].value = temp;
-			heapifyUp(Queue, array[a - 1], array);
+			cin >> a;
+			cin >> newNum;
+			oldNum = array[a-1];
+            array[a-1] = newNum;
+            int ind = find(heap.begin(), heap.end(), oldNum) - heap.begin();
+            heap[ind] = newNum;
+            siftdown(heap, 0, ind)
 			break;
 		default:
 			break;
