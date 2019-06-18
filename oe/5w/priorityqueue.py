@@ -25,6 +25,7 @@ def siftup(heap, pos):
         rightpos = childpos + 1
         if rightpos < endpos and not heap[childpos] < heap[rightpos]:
             childpos = rightpos
+            print("A")
         # Move the smaller child up.
         heap[pos] = heap[childpos]
         pos = childpos
@@ -41,7 +42,7 @@ def siftdown(heap, startpos, pos):
     while pos > startpos:
         parentpos = (pos - 1) >> 1
         parent = heap[parentpos]
-        if parent < newitem:
+        if newitem < parent:
             heap[pos] = parent
             pos = parentpos
             continue

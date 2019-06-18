@@ -84,8 +84,8 @@ int main () {
         {
             vec[i].second = v[m-j-1][vec[i].first];
         }
-//        stable_sort(vec.begin(), vec.end(), sortbysec);
-        countingSort(vec);
+       stable_sort(vec.begin(), vec.end(), sortbysec);
+        // countingSort(vec);
     }
 
     for (size_t i = 0; i < n; ++i) {

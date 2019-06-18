@@ -35,29 +35,6 @@ void countingSort(vector< pair <int, char> > &a)
 //    return output;
 }
 
-void countingSort2(vector< pair <int, char> > &arr){
-    int count[26]={0};
-    int i;
-    vector< pair <int, char> > out(arr.size());
-
-
-    for(i=0;i<arr.size();i++)
-        ++count[arr[i].second-'a'];
-
-    for(i=1;i<26;i++)
-        count[i]+=count[i-1];
-
-
-
-    for(i=arr.size()-1;i>=0;i--){
-        out[count[arr[i].second-'a']-1]=arr[i];
-        --count[arr[i].second-'a'];
-    }
-
-    for(i=0;i<arr.size();i++)
-        arr[i]=out[i];
-}
-
 int main () {
     ifstream fi;
     ofstream fo;

@@ -2,7 +2,12 @@
 #include <string>
 #include <queue>
 #include <deque>
+
+/**/
 #include "edx-io.hpp"
+#define cout io
+#define cin io
+/**/
 
 using namespace std;
 
@@ -24,16 +29,16 @@ int depth(int i) {
 
 int main() {
 	int n, k, l, r;
-	io >> n;
+	cin >> n;
 	if (n) {
 		tree = new t_node[n];
 		for (int i = 0; i < n; ++i) {
-			io >> k >> tree[i].left >> tree[i].right;
+			cin >> k >> tree[i].left >> tree[i].right;
 		}
-		io << depth(0);
+		cout << depth(0);
 	}
 	else {
-		io << 0;
+		cout << 0;
 	}
 	return 0;
 }

@@ -3,9 +3,11 @@
 #include <queue>
 #include <deque>
 using namespace std;
+/**/
 #include "edx-io.hpp"
-#define cin io
 #define cout io
+#define cin io
+/**/
 struct t_node {
 	int left, right, key;
 } *tree;

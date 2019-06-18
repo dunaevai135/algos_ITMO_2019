@@ -20,13 +20,9 @@ long long calc_distance(vector<long> pos) {
 	long k = pos.size() - 1;
 	for (long i = pos.size() - 1; i >= 0; i--) {
 		temp = (long long)k * pos[i];
-		sum += temp -1 - i;
+		sum += temp - i;
 		k -= 2;
 	}
-	// for (long i = 1; i < pos.size(); i++)
-	// {
-	// 	sum -= i;
-	// }
 	return sum;
 }
 
@@ -51,7 +47,7 @@ int main() {
 
 	for (char i = 'a'; i <= 'z'; i++) {
 		if (lett.count(i) && lett[i].size() > 1) {
-			counter += calculate_sum_distance(lett[i]);
+			ans += calc_distance(lett[i]);
 		}
 	}
 
